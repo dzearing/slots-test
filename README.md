@@ -47,11 +47,9 @@ const Button = withSlots((props, renderSlot) => {
    */
   return (
     <button>
-      {beforeIcon && renderSlot("before", <Icon name={beforeIcon} />)}
-
+      <span>{renderSlot("before", <Icon name={beforeIcon} />)}</span>
       <span>{children}</span>
-
-      {afterIcon && renderSlot("before", <Icon name={afterIcon} />)}
+      <span>{renderSlot("after", <Icon name={afterIcon} />)}</span>
     </button>
   );
 });
@@ -71,9 +69,9 @@ Before, you could not change out icon implementations:
 
 ```tsx
 <Button>
-  <Slot name="beforeIcon">
+  <Button.slots.before>
     <AddIcon />
-  </Slot>
+  </Button.slots.before>
   content
 </Button>
 ```
@@ -82,7 +80,7 @@ Before, you could not change out icon implementations:
 
 ```tsx
 <Button>
-  <Slot name="beforeIcon" />
+  <Button.slots.before />
   content
 </Button>
 ```
@@ -116,5 +114,3 @@ Before, you could not change out icon implementations:
   content
 </Button>
 ```
-
-### How it works
