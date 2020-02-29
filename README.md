@@ -89,11 +89,11 @@ Before, you could not change out icon implementations:
 
 ```tsx
 <Button>
-  <Slot name="beforeIcon">{
+  <Button.slots.before>{
     (defaultContent, state) => (
       state.disabled ? <DisabledAddIcon/> : <AddIcon/>
     )
-  } />
+  }</Button.slots.before>
   content
 </Button>
 ```
@@ -102,7 +102,7 @@ Before, you could not change out icon implementations:
 
 ```tsx
 <Button>
-  <Slot name="beforeIcon">{
+  <Button.slots.before>{
     (defaultContent, state) => (
       <Tooltip>
         {
@@ -110,7 +110,7 @@ Before, you could not change out icon implementations:
         }
       </Tooltip>
     )
-  } />
+  }</Button.slots.before>
   content
 </Button>
 ```
